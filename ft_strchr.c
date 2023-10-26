@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ottouti <ottouti@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 17:09:46 by ottouti           #+#    #+#             */
-/*   Updated: 2023/10/26 19:43:36 by ottouti          ###   ########.fr       */
+/*   Created: 2023/10/18 19:19:11 by ottouti           #+#    #+#             */
+/*   Updated: 2023/10/25 17:51:12 by ottouti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-#include "ft_printf.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
 
-int	ft_printf(const char *format, ...)
+char	*ft_strchr(const char *s, int c)
 {
-	va_list ap;
-	int		count;
-
-	count = 0;
-	va_start(ap, format);
-	while(*format)
+	while (*s)
 	{
-		if (*format == '%')
-			count += find_format(*(++format), ap);
-		else
-			count += write(1, format, 1);
-		format++;
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
 	}
-	va_end(ap);
-	return (count);
+	if (!(char)c)
+		return ((char *)s);
+	else
+		return (0);
 }

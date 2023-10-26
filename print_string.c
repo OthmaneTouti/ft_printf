@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ottouti <ottouti@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 17:09:46 by ottouti           #+#    #+#             */
-/*   Updated: 2023/10/26 19:43:36 by ottouti          ###   ########.fr       */
+/*   Created: 2023/10/26 19:44:45 by ottouti           #+#    #+#             */
+/*   Updated: 2023/10/26 19:46:54 by ottouti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,14 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-int	ft_printf(const char *format, ...)
+int print_string(const char * str)
 {
-	va_list ap;
-	int		count;
+	int count;
 
 	count = 0;
-	va_start(ap, format);
-	while(*format)
-	{
-		if (*format == '%')
-			count += find_format(*(++format), ap);
-		else
-			count += write(1, format, 1);
-		format++;
-	}
-	va_end(ap);
+	if (!str)
+		return (0);
+	while (*str)
+		count += write(1, str, 1);
 	return (count);
 }
