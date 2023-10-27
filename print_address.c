@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_string.c                                     :+:      :+:    :+:   */
+/*   print_address.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ottouti <ottouti@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 19:44:45 by ottouti           #+#    #+#             */
-/*   Updated: 2023/10/27 19:26:02 by ottouti          ###   ########.fr       */
+/*   Created: 2023/10/27 18:46:05 by ottouti           #+#    #+#             */
+/*   Updated: 2023/10/27 19:25:24 by ottouti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,17 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-int	print_string(const char *str)
+int	print_address(unsigned long address)
 {
 	int		count;
-	char	*null_str;
+	char	*symbols;
 
-	count = 0;
-	null_str = "(null)";
-	if (!str)
+	symbols = "0123456789abcdef";
+	if (address < 16)
+		return (write(1, &symbols[address], 1));
+	else
 	{
-		while (*null_str)
-		{
-			count += write(1, null_str, 1);
-			null_str++;
-		}
-		return (count);
+		count = print_address(address / 16);
+		return (count + print_address(address % 16));
 	}
-	while (*str)
-	{
-		count += write(1, str, 1);
-		str++;
-	}
-	return (count);
 }

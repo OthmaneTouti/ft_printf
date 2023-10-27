@@ -6,7 +6,7 @@
 /*   By: ottouti <ottouti@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 19:33:15 by ottouti           #+#    #+#             */
-/*   Updated: 2023/10/26 20:25:57 by ottouti          ###   ########.fr       */
+/*   Updated: 2023/10/27 18:24:24 by ottouti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 int	print_char(int c)
 {
 	if (c == 0)
-		return (1);
-	write(1, &c, 1);
-	return (1);
+		return (write(1, "\0", 1));
+	return (write(1, &c, 1));
 }
