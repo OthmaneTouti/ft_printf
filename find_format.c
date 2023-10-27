@@ -6,7 +6,7 @@
 /*   By: ottouti <ottouti@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 19:37:35 by ottouti           #+#    #+#             */
-/*   Updated: 2023/10/26 19:45:26 by ottouti          ###   ########.fr       */
+/*   Updated: 2023/10/26 20:11:02 by ottouti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ int	find_format(char specifier, va_list ap)
 	// 	count = print_hexa_low(va_arg(ap, int));
 	// else if (specifier == 'X')
 	// 	count = print_hexa_upp(va_arg(ap, int));
-	 else if (specifier == '%')
+	else if (specifier == '%')
 	 	count = write(1, "%", 1);
+	else
+		count = write(1, &specifier, 1);
 	return (count);
 }

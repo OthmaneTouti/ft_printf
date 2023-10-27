@@ -6,7 +6,7 @@
 #    By: ottouti <ottouti@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 16:02:25 by ottouti           #+#    #+#              #
-#    Updated: 2023/10/26 19:48:10 by ottouti          ###   ########.fr        #
+#    Updated: 2023/10/26 20:09:41 by ottouti          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME = libftprintf.a
 SRC = ft_printf.c \
 		print_char.c \
 		find_format.c \
-		print_string \
+		print_string.c 
 OBJ = $(SRC:.c=.o)
 INCLUDE = ft_printf.h
 
@@ -39,7 +39,7 @@ $(NAME): $(OBJ)
 %.o: %.c $(INCLUDE)
 	$(CC) $(CCFLAGS) $(INCFLAGS) -c -o $@ $<
 
-bonus: all
+#bonus: all
 
 clean: libft_clean
 	$(RM) $(OBJ)
@@ -57,8 +57,8 @@ test: all
 libft_all:
 	$(MAKE) -C $(LIBFT_ROOT) all
 
-libft_bonus:
-	$(MAKE) -C $(LIBFT_ROOT) bonus
+#libft_bonus:
+#	$(MAKE) -C $(LIBFT_ROOT) bonus
 
 libft_clean:
 	$(MAKE) -C $(LIBFT_ROOT) clean
