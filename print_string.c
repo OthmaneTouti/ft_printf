@@ -6,7 +6,7 @@
 /*   By: ottouti <ottouti@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 19:44:45 by ottouti           #+#    #+#             */
-/*   Updated: 2023/10/27 19:26:02 by ottouti          ###   ########.fr       */
+/*   Updated: 2023/10/28 15:59:05 by ottouti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,14 @@
 
 int	print_string(const char *str)
 {
-	int		count;
-	char	*null_str;
+	int			count;
+	const char	*null_str;
 
 	count = 0;
 	null_str = "(null)";
 	if (!str)
 	{
-		while (*null_str)
-		{
-			count += write(1, null_str, 1);
-			null_str++;
-		}
+		count = print_string(null_str);
 		return (count);
 	}
 	while (*str)
