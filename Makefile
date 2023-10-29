@@ -6,7 +6,7 @@
 #    By: ottouti <ottouti@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 16:02:25 by ottouti           #+#    #+#              #
-#    Updated: 2023/10/27 18:47:50 by ottouti          ###   ########.fr        #
+#    Updated: 2023/10/29 14:03:03 by ottouti          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,7 @@ MAKE = make
 
 NAME = libftprintf.a
 SRC = ft_printf.c \
-		print_char.c \
-		find_format.c \
-		print_string.c \
-		print_digit.c \
-		print_address.c
+		ft_printf_utils.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = ft_printf.h
 

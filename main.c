@@ -178,8 +178,8 @@ int	main(void)
 		printf("\tCount: %d\tCount Check: %d\n", count, count_check);
 	}
 	//TEST15
-	count = ft_printf("%p\n", NULL);
-	count_check = printf("%p\n", NULL);
+	count = ft_printf("%i\n", LONG_MIN);
+	count_check = printf("%i\n", LONG_MIN);
 	if (count == count_check)
 		printf("\033[0;32m 14.OK \33[0m");
 	else
