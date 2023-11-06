@@ -6,15 +6,12 @@
 /*   By: ottouti <ottouti@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:09:46 by ottouti           #+#    #+#             */
-/*   Updated: 2023/10/29 14:10:45 by ottouti          ###   ########.fr       */
+/*   Updated: 2023/11/06 11:13:59 by ottouti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "ft_printf.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
 
 int	find_format(char specifier, va_list ap)
 {
